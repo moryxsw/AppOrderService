@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <!--    统一父包管理-->
+
+
+
+    <groupId>network.y9</groupId>
+
+
+    <artifactId>order</artifactId>
+
+
+    <packaging>pom</packaging>
+
+
+    <version>1.0.0-SNAPSHOT</version>
+
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- maven plugin version-->
+        <maven.compiler.version>3.10.1</maven.compiler.version>
+        <maven.source.version>3.2.1</maven.source.version>
+        <maven.archetype.version>3.2.1</maven.archetype.version>
+        <!-- 版本号统一管理-->
+        <!-- 工具包-->
+        <cn.hutool.version>5.8.12</cn.hutool.version>
+        <org.projectlombok.version>1.18.26</org.projectlombok.version>
+        <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
+    </properties>
+
+
+    <dependencyManagement>
+
+
+        <dependencies>
+
+
+            <!--            内部包-->
+
+
+            <dependency>
+
+
+                <groupId>network.y9</groupId>
+
+
+                <artifactId>order-common</artifactId>
+
+
+                <version>1.0.0-SNAPSHOT</version>
+
+
+            </dependency>
+
+
+            <dependency>
+
+
+                <groupId>network.y9</groupId>
+
+
+                <artifactId>order-domain</artifactId>
+
+
+                <version>1.0.0-SNAPSHOT</version>
+
+
+            </dependency>
+
+
+            <dependency>
+
+
+                <groupId>network.y9</groupId>
+
+
+                <artifactId>order-iface</artifactId>
+
+
+                <version>1.0.0-SNAPSHOT</version>
+
+
+            </dependency>
+
+
+            <dependency>
+
+
+                <groupId>network.y9</groupId>
+
+
+                <artifactId>order-infrastructure</artifactId>
+
+
+                <version>1.0.0-SNAPSHOT</version>
+
+
+            </dependency>
+
+
+            <dependency>
+
+
+                <groupId>network.y9</groupId>
+
+
+                <artifactId>order-application</artifactId>
+
+
+                <version>1.0.0-SNAPSHOT</version>
+
+
+            </dependency>
+
+
+            <dependency>
+
+
+                <groupId>network.y9</groupId>
+
+
+                <artifactId>order-gateway</artifactId>
+
+
+                <version>1.0.0-SNAPSHOT</version>
+
+
+            </dependency>
+
+
+            <!--            spring-->
+
+
+            <dependency>
+
+
+                <groupId>org.springframework.boot</groupId>
+
+
+                <artifactId>spring-boot-starter</artifactId>
+
+
+                <version>3.0.2</version>
+
+
+            </dependency>
+
+
+                        <dependency>
+
+
+                            <groupId>org.springframework.boot</groupId>
+
+
+                            <artifactId>spring-boot-starter-test</artifactId>
+
+
+                            <version>3.0.2</version>
+
+
+                            <scope>test</scope>
+
+
+                        </dependency>
+
+
+            <!-- 工具类-->
+
+
+            <dependency>
+
+
+                <groupId>cn.hutool</groupId>
+
+
+                <artifactId>hutool-all</artifactId>
+
+
+                <version>${cn.hutool.version}</version>
+
+
+            </dependency>
+
+
+            <dependency>
+
+
+                <groupId>org.projectlombok</groupId>
+
+
+                <artifactId>lombok</artifactId>
+
+
+                <version>${org.projectlombok.version}</version>
+
+
+                <scope>provided</scope>
+
+
+            </dependency>
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${org.mapstruct.version}</version>
+            </dependency>
+
+
+          <dependency>
+            <groupId>com.mybatis-flex</groupId>
+            <artifactId>mybatis-flex-spring-boot-starter</artifactId>
+            <version>1.5.4</version>
+          </dependency>
+          <dependency>
+            <groupId>com.mybatis-flex</groupId>
+            <artifactId>mybatis-flex-processor</artifactId>
+            <version>1.5.4</version>
+            <scope>provided</scope>
+          </dependency>
+
+
+        </dependencies>
+
+
+    </dependencyManagement>
+
+
+    <build>
+
+
+        <plugins>
+
+
+            <plugin>
+
+
+                <groupId>org.apache.maven.plugins</groupId>
+
+
+                <artifactId>maven-compiler-plugin</artifactId>
+
+
+                <version>${maven.compiler.version}</version>
+
+
+                <configuration>
+
+
+                    <source>1.17</source>
+
+
+                    <target>1.17</target>
+
+
+                    <encoding>UTF-8</encoding>
+
+
+                    <skip>true</skip>
+
+
+                </configuration>
+
+
+            </plugin>
+
+
+            <plugin>
+
+
+                <groupId>org.apache.maven.plugins</groupId>
+
+
+                <artifactId>maven-source-plugin</artifactId>
+
+
+                <version>${maven.source.version}</version>
+
+
+                <configuration>
+
+
+                    <attach>true</attach>
+
+
+                </configuration>
+
+
+                <executions>
+
+
+                    <execution>
+
+
+                        <phase>compile</phase>
+
+
+                        <goals>
+
+
+                            <goal>jar</goal>
+
+
+                        </goals>
+
+
+                    </execution>
+
+
+                </executions>
+
+
+            </plugin>
+
+            <plugin>
+
+                <groupId>org.apache.maven.plugins</groupId>
+
+                <artifactId>maven-archetype-plugin</artifactId>
+
+                <version>${maven.archetype.version}</version>
+
+            </plugin>
+
+        </plugins>
+
+    </build>
+    <modules>
+        <module>order-iface</module>
+        <module>order-domain</module>
+        <module>order-common</module>
+        <module>order-gateway</module>
+        <module>order-application</module>
+        <module>order-infrastructure</module>
+
+    </modules>
+
+
+</project>
