@@ -18,6 +18,7 @@
 
     <dependencies>
 
+
         <dependency>
             <groupId>network.y9</groupId>
             <artifactId>order-common</artifactId>
@@ -29,9 +30,22 @@
             <artifactId>order-infrastructure</artifactId>
         </dependency>
 
+<!--        spring 插件-->
+        <dependency>
+            <groupId>org.springframework.plugin</groupId>
+            <artifactId>spring-plugin-core</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
         <dependency>
             <groupId>network.y9</groupId>
             <artifactId>order-domain</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.28</version>
         </dependency>
 
 

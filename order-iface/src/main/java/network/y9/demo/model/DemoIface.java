@@ -14,4 +14,7 @@ public interface DemoIface {
 
     Result<String> getString(DemoRequest request);
 
+
+
+
 }
